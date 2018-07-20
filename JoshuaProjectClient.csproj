@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PackageProjectUrl>https://github.com/WycliffeAssociates/JoshuaProjectClient</PackageProjectUrl>
+    <Authors>rbnswartz;rbnswartz_wa</Authors>
+    <Description>
+    A client for the Joshua Project API (https://api.joshuaproject.org)
+    </Description>
+    <ProjectLicenseUrl>https://github.com/WycliffeAssociates/JoshuaProjectClient/blob/master/LICENSE</ProjectLicenseUrl>
+    <Title>A client for the Joshua Project API</Title>
+    <VersionPrefix>0.1.0</VersionPrefix>
+  </PropertyGroup>
+</Project>
