@@ -51,7 +51,7 @@ namespace JoshuaProjectClient
                     }
                     else if (result.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                     {
-                        throw new AccessViolationException("Got unauthorized from Joshua Project check your api key");
+                        throw new UnauthorizedAccessException("Got unauthorized from Joshua Project check your api key");
                     }
                     else
                     {
@@ -83,7 +83,7 @@ namespace JoshuaProjectClient
                 }
                 else if (result.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                 {
-                    throw new AccessViolationException("Got unauthorized from Joshua Project check your api key");
+                    throw new UnauthorizedAccessException("Got unauthorized from Joshua Project check your api key");
                 }
                 else
                 {
@@ -125,7 +125,7 @@ namespace JoshuaProjectClient
                     }
                     else if (result.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                     {
-                        throw new AccessViolationException("Got unauthorized from Joshua Project check your api key");
+                        throw new UnauthorizedAccessException("Got unauthorized from Joshua Project check your api key");
                     }
                     else
                     {
@@ -157,7 +157,7 @@ namespace JoshuaProjectClient
                 }
                 else if (result.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                 {
-                    throw new AccessViolationException("Got unauthorized from Joshua Project check your api key");
+                    throw new UnauthorizedAccessException("Got unauthorized from Joshua Project check your api key");
                 }
                 else
                 {
