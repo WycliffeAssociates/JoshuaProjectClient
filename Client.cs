@@ -1,10 +1,10 @@
 ﻿using JoshuaProjectClient.Models;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace JoshuaProjectClient
@@ -13,6 +13,11 @@ namespace JoshuaProjectClient
     {
         private string apiKey;
         private string baseUrl = "https://api.joshuaproject.net/v1/";
+        private static readonly JsonSerializerOptions jsonOptions = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true
+        };
+        
         public Client(string apiKey)
         {
             this.apiKey = apiKey;
@@ -35,7 +40,7 @@ namespace JoshuaProjectClient
                     var result = client.GetAsync($"{this.baseUrl}languages.json?api_key={apiKey}&page={page}").Result;
                     if (result.IsSuccessStatusCode)
                     {
-                        List<JPLanguage> tmp = JsonConvert.DeserializeObject<List<JPLanguage>>(result.Content.ReadAsStringAsync().Result);
+                        List<JPLanguage> tmp = JsonSerializer.Deserialize<List<JPLanguage>>(result.Content.ReadAsStringAsync().Result, jsonOptions);
                         if (tmp.Count > 0)
                         {
                             output.AddRange(tmp);
@@ -75,7 +80,7 @@ namespace JoshuaProjectClient
                 var result = client.GetAsync($"{this.baseUrl}languages/{id}.json?api_key={apiKey}").Result;
                 if (result.IsSuccessStatusCode)
                 {
-                    return JsonConvert.DeserializeObject<JPLanguage>(result.Content.ReadAsStringAsync().Result);
+                    return JsonSerializer.Deserialize<JPLanguage>(result.Content.ReadAsStringAsync().Result, jsonOptions);
                 }
                 else if (result.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
@@ -109,7 +114,7 @@ namespace JoshuaProjectClient
                     var result = client.GetAsync($"{this.baseUrl}people_groups.json?api_key={apiKey}&page={page}").Result;
                     if (result.IsSuccessStatusCode)
                     {
-                        List<JPPeopleGroup> tmp = JsonConvert.DeserializeObject<List<JPPeopleGroup>>(result.Content.ReadAsStringAsync().Result);
+                        List<JPPeopleGroup> tmp = JsonSerializer.Deserialize<List<JPPeopleGroup>>(result.Content.ReadAsStringAsync().Result, jsonOptions);
                         if (tmp.Count > 0)
                         {
                             output.AddRange(tmp);
@@ -149,7 +154,7 @@ namespace JoshuaProjectClient
                 var result = client.GetAsync($"{this.baseUrl}people_groups/{peopleGroupId}.json?api_key={apiKey}").Result;
                 if (result.IsSuccessStatusCode)
                 {
-                    return JsonConvert.DeserializeObject<JPPeopleGroup>(result.Content.ReadAsStringAsync().Result);
+                    return JsonSerializer.Deserialize<JPPeopleGroup>(result.Content.ReadAsStringAsync().Result, jsonOptions);
                 }
                 else if (result.StatusCode == System.Net.HttpStatusCode.NotFound)
                 {
