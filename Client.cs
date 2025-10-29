@@ -41,7 +41,7 @@ namespace JoshuaProjectClient
                     if (result.IsSuccessStatusCode)
                     {
                         List<JPLanguage> tmp = JsonSerializer.Deserialize<List<JPLanguage>>(result.Content.ReadAsStringAsync().Result, jsonOptions);
-                        if (tmp.Count > 0)
+                        if (tmp != null && tmp.Count > 0)
                         {
                             output.AddRange(tmp);
                         }
@@ -115,7 +115,7 @@ namespace JoshuaProjectClient
                     if (result.IsSuccessStatusCode)
                     {
                         List<JPPeopleGroup> tmp = JsonSerializer.Deserialize<List<JPPeopleGroup>>(result.Content.ReadAsStringAsync().Result, jsonOptions);
-                        if (tmp.Count > 0)
+                        if (tmp != null && tmp.Count > 0)
                         {
                             output.AddRange(tmp);
                         }
