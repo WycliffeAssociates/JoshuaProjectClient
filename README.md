@@ -1,6 +1,6 @@
 # JoshuaProjectClient
 
-A .NET Standard 2.1 client library for the [Joshua Project API](https://api.joshuaproject.org), providing easy access to data about unreached people groups and languages around the world.
+A .NET Standard 2.1 client library for the [Joshua Project API](https://api.joshuaproject.net), providing easy access to data about unreached people groups and languages around the world.
 
 ## Overview
 
@@ -187,7 +187,7 @@ This project is licensed under the terms found in the [LICENSE](LICENSE) file.
 ## Related Links
 
 - [Joshua Project Website](https://joshuaproject.net)
-- [Joshua Project API Documentation](https://api.joshuaproject.org)
+- [Joshua Project API Documentation](https://api.joshuaproject.net)
 - [NuGet Package](https://www.nuget.org/packages/JoshuaProjectClient)
 
 ## Contributing
@@ -196,5 +196,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Authors
 
-- rbnswartz
-- rbnswartz_wa
+- @rbnswartz
