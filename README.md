@@ -24,7 +24,7 @@ Or add directly to your `.csproj` file:
 
 ### Getting Started
 
-First, obtain an API key from [Joshua Project](https://api.joshuaproject.org). Then initialize the client:
+First, obtain an API key from [Joshua Project](https://joshuaproject.net). Then initialize the client:
 
 ```csharp
 using JoshuaProjectClient;
@@ -117,7 +117,7 @@ dotnet build --configuration Release
 
 ### API Key
 
-The client requires a valid Joshua Project API key. You can request one at [https://api.joshuaproject.org](https://api.joshuaproject.org).
+The client requires a valid Joshua Project API key. You can request one at [https://joshuaproject.net](https://joshuaproject.net).
 
 **Best Practices:**
 - Store your API key in environment variables or secure configuration
