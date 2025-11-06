@@ -136,7 +136,7 @@ namespace JoshuaProjectClient.Models
             {
                 get; set;
             }
-            public string JPScale
+            public int JPScale
             {
                 get; set;
             }
@@ -212,7 +212,7 @@ namespace JoshuaProjectClient.Models
             {
                 get; set;
             }
-            public string RLG4
+            public int? RLG4
             {
                 get; set;
             }
